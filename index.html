@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to MyFuse!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js" integrity="sha512-nIwdJlD5/vHj23CbO2iHCXtsqzdTTx3e3uAmpTm4x2Y8xCIFyWu4cSIV8GaGe2UNVq86/1h9EgUZy7tn243qdA==" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/tailwind.min.css">
+    <link rel="stylesheet" href="./css/hamburgers.min.css">
+</head>
+<style>
+    :root{
+        --primary: #F8C446;
+        --secondary: #FFF5DC;
+        --accent: #F6F6F6;
+    }
+    body{
+        font-family: 'Quicksand';
+    }
+    .bg-primary{
+        background-color: var(--primary);
+    }
+    button .bg-primary:hover{
+        background-color: #f2af13;
+    }
+    .text-primary{
+        color: var(--primary);
+    }
+    .text-secondary{
+        color: var(--secondary);
+    }
+    .btn-bg-trans{
+        background-color: rgba(255, 255, 255, 0.27);
+    }
+    .btn-border{
+        border: 3px solid var(--secondary);
+    }
+    @media screen and (min-width: 768px){
+        .headText{
+            font-size: 38px;
+            line-height: 38px;
+        }
+        .main-header{
+        line-height: 64px;
+    }
+    }
+    @media screen and (max-width: 767px){
+        nav{
+            transition: .4s ease;
+        }
+        .nav-collapsed{
+            margin-top: -140%;
+            transition: .4s ease;
+        }
+    }
+    
+</style>
+<body class="bg-gray-50">
+        <div class="w-full lg:hidden z-40 p-8 absolute" x-data="{ active: false }">
+            <div class="hamburger text-white bg-gray-100 rounded-lg float-right is-active mx-auto w-max" :class="{ 'hamburger--3dx': active == true}" @click="active = ! active">
+            <div class="hamburger-box" >
+              <div class="hamburger-inner"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <nav class="absolute bg-white mx-auto w-full z-0 nav-collapsed items-center lg:flex lg:px-16 justify-center shadow-xl">
+        <img src="./img/MyFuse.in.svg" alt="Bitely!" class="p-10 lg:w-48 w-56 mt-0 my-auto ">
+        <ul class="ml-auto font-semibold lg:flex lg:p-0 p-8">
+            <li class="px-4">Post Job</li>
+            <li class="px-4">Contact</li>
+            <li class="px-4">About</li>
+        </ul>
+    </nav>
+    <script>
+        $('.hamburger').on('click', function(){
+            $('nav').toggleClass('nav-collapsed');
+        })
+    </script>
+ 
+    <main class="lg:flex block px-4 lg:p-32 pt-32 lg:pt-64 divide-x-2">
+        <div class="px-10">
+            <h1 class="lg:text-5xl text-3xl font-bold text-gray-600 lg:w-10/12 py-6 main-header">We connect people to job opportunities</h1>
+            <button class="px-6 py-2 text-black text-lg focus:outline-none rounded-full shadow bg-primary">Explore</button>
+        </div>
+        <div class="lg:w-5/12 flex flex-col lg:mt-0 mt-32">
+            <div class="px-8">
+                <h1 class="font-bold text-2xl">I am an employer</h1>
+                <p class="text-sm">Create a job post and allow people to apply for it, we'll examine candidates to fit your needs</p>
+                <button class="px-6 py-2 text-black focus:outline-none rounded-full shadow bg-primary my-2">Post Job</button>
+            </div>
+            <div class="px-10 lg:mt-6">
+                <h1 class="font-bold text-2xl">Looking for job</h1>
+                <p class="text-sm">Browse job postings and apply for the ones meeting your profession</p>
+                <button class="px-6 py-2 text-black focus:outline-none rounded-full shadow bg-primary my-2">Download our app</button>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
