@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyFuse | Register to post jobs!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.3.0/alpine.js" integrity="sha512-nIwdJlD5/vHj23CbO2iHCXtsqzdTTx3e3uAmpTm4x2Y8xCIFyWu4cSIV8GaGe2UNVq86/1h9EgUZy7tn243qdA==" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/glide.min.js" integrity="sha512-IkLiryZhI6G4pnA3bBZzYCT9Ewk87U4DGEOz+TnRD3MrKqaUitt+ssHgn2X/sxoM7FxCP/ROUp6wcxjH/GcI5Q==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.core.min.css" integrity="sha512-YQlbvfX5C6Ym6fTUSZ9GZpyB3F92hmQAZTO5YjciedwAaGRI9ccNs4iw2QTCJiSPheUQZomZKHQtuwbHkA9lgw==" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/tailwind.min.css">
+    <link rel="stylesheet" href="./css/hamburgers.min.css">
+</head>
+<style>
+    :root{
+        --primary: #F8C446;
+        --secondary: #FFF5DC;
+        --accent: #F6F6F6;
+        --dark: #393939;
+    }
+    body{
+        font-family: 'Quicksand';
+    }
+    .bg-primary{
+        background-color: var(--primary);
+    }
+    .bg-secondary{
+        background-color: var(--secondary);
+    }
+    .bg-accent{
+        background-color: var(--accent);
+    }
+    .bg-dark{
+        background-color: var(--dark);
+    }
+    button .bg-primary:hover{
+        background-color: #f2af13;
+    }
+    .text-primary{
+        color: var(--primary);
+    }
+    .text-secondary{
+        color: var(--secondary);
+    }
+    .text-dark{
+        color: var(--dark);
+    }
+    .btn-bg-trans{
+        background-color: rgba(255, 255, 255, 0.27);
+    }
+    .btn-border{
+        border: 3px solid var(--secondary);
+    }
+    @media screen and (min-width: 768px){
+        .headText{
+            font-size: 38px;
+            line-height: 38px;
+        }
+        .main-header{
+        line-height: 64px;
+    }
+    }
+    @media screen and (max-width: 767px){
+        nav{
+            transition: .4s ease;
+        }
+        .nav-collapsed{
+            margin-top: -140%;
+            transition: .4s ease;
+        }
+    }
+    
+</style>
+<body class="bg-accent">
+        <div class="w-full lg:hidden z-40 p-8 absolute" x-data="{ active: false }">
+            <div class="hamburger text-white bg-gray-100 rounded-lg float-right is-active mx-auto w-max" :class="{ 'hamburger--3dx': active == true}" @click="active = ! active">
+            <div class="hamburger-box" >
+            <div class="hamburger-inner"></div>
+            </div>
+        </div>
+        </div>
+
+        <nav class="absolute bg-white mx-auto w-full z-0 nav-collapsed items-center lg:flex lg:px-16 justify-center shadow-xl">
+            <img src="./img/MyFuse.in.svg" alt="Bitely!" class="p-10 lg:w-48 w-56 mt-0 my-auto ">
+            <ul class="ml-auto font-semibold lg:flex lg:p-0 p-8">
+                <a href="./index.html"><li class="px-4">Home</li></a>
+                <li class="px-4">Contact</li>
+                <li class="px-4">About</li>
+            </ul>
+        </nav>
+        <script>
+            $('.hamburger').on('click', function(){
+                $('nav').toggleClass('nav-collapsed');
+            })
+        </script>
+
+        <main class="pt-32 lg:pt-40 px-2 lg:px-24">
+            <form action="" class="px-10 bg-white text-sm py-10 w-full lg:w-max shadow-xl rounded-3xl">
+                <h1 class="font-semibold text-lg text-center lg:text-xl pb-8">Register yourself to start posting the jobs</h1>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-3">
+                    <input type="text" class="bg-yellow-50 focus:outline-none rounded-full px-6 py-3 bg-gray-50 shadow-inner" placeholder="Full Name">
+                    <input type="tel" class="bg-yellow-50 focus:outline-none rounded-full px-6 py-3 bg-gray-50 shadow-inner" placeholder="Phone number">
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 py-3">
+                    <input type="email" class="bg-yellow-50 focus:outline-none rounded-full px-6 py-3 bg-gray-50 shadow-inner" placeholder="Email address">
+                    <input type="text" class="bg-yellow-50 focus:outline-none rounded-full px-6 py-3 bg-gray-50 shadow-inner" placeholder="Company name">
+                </div>
+                <textarea class="bg-yellow-50 focus:outline-none rounded-2xl w-full px-6 py-3 bg-gray-50 shadow-inner" placeholder="Job Description"></textarea>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 py-3">
+                    <input type="text" class="bg-yellow-50 focus:outline-none rounded-full px-6 py-3 bg-gray-50 shadow-inner" placeholder="Job Role">
+                    <input type="text" class="bg-yellow-50 focus:outline-none rounded-full px-6 py-3 bg-gray-50 shadow-inner" placeholder="No. of openings">
+                </div>
+                <input type="address" class="bg-yellow-50 w-full focus:outline-none rounded-full px-6 py-3 bg-gray-50 shadow-inner" placeholder="Location">
+                <button class="w-full focus:outline-none my-4 ml-auto bg-primary hover:bg-yellow-500 rounded-full shadow font-semibold px-6 py-3">Submit</button>
+            </form>
+        </main>
+
+</body>
+</html>
