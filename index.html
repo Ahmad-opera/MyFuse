@@ -178,11 +178,11 @@
             <button class="py-2 px-6 rounded-full focus:outline-none shadow bg-primary">Download</button>
         </div>
         <div class="flex flex-col lg:flex-row lg:w-4/12 pt-10 overflow-hidden items-center glide">
-            <div class="glide__track" data-glide-el="track">
+            <div class="glide__track w-96" data-glide-el="track">
               <ul class="glide__slides">
                 <li class="glide__slide">
                     <div class="flex flex-col lg:flex-row w-full lg:px-8 pt-10 items-center">
-                        <div class="w-full lg:pl-0 pl-16">
+                        <div class="w-full lg:pl-0 pl-8">
                             <h1 class="font-semibold">1. Login or Sign Up</h1>
                             <p class="text-sm lg:w-10/12">use your personal credentials to create an account or login if you already have an existing account.</p>
                         </div>
@@ -193,7 +193,7 @@
                 </li>
                 <li class="glide__slide">
                     <div class="flex flex-col lg:flex-row w-full lg:px-8 pt-10 items-center">
-                        <div class="w-full lg:pl-0 pl-16">
+                        <div class="w-full lg:pl-0 pl-8">
                             <h1 class="font-semibold">2. Browse through job opportunities.</h1>
                             <p class="text-sm lg:w-10/12">Browse through jobs list and apply for the ones meeting your skill set in few and easy steps.</p>
                         </div>
@@ -204,7 +204,7 @@
                 </li>
                 <li class="glide__slide">
                     <div class="flex flex-col lg:flex-row w-full lg:px-8 pt-10 items-center">
-                        <div class="w-full lg:pl-0 pl-16">
+                        <div class="w-full lg:pl-0 pl-8">
                             <h1 class="font-semibold">3. Clear mock interview to apply the job.</h1>
                             <p class="text-sm lg:w-10/12">Get your mock test and perform your best.</p>
                         </div>
@@ -215,7 +215,7 @@
                 </li>
                 <!-- <li class="glide__slide">
                     <div class="flex flex-col lg:flex-row w-full lg:px-8 pt-10 items-center">
-                        <div class="w-full lg:pl-0 pl-16">
+                        <div class="w-full lg:pl-0 pl-8">
                             <h1 class="font-semibold">4. Get real time updates on your job application.</h1>
                             <p class="text-sm lg:w-10/12">Get real time updates on jobs you applied for and get the best out of our assistive system.</p>
                         </div>
@@ -358,8 +358,9 @@
   type: 'carousel',
   autoplay: 7000,
   animationDuration: 1500,
+  startAt: 0,
   perView: 1,
-  draggable: false
+  width: 100
 }).mount()
 </script>
 </body>
